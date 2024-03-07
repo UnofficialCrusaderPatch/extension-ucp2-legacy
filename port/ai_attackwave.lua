@@ -30,6 +30,8 @@ return {
     end,
 
     enable = function(self, config)
+
+        local theValue = config.sliderValue or 7
         
         -- new DefaultHeader("ai_attackwave")
         local walls = self.ai_attackwave_edit + 1 + 4 + readInteger(self.ai_attackwave_edit + 1)
@@ -55,7 +57,7 @@ return {
                     0xE8,  -- call find building
                     function(index) return itob(getRelativeAddress(index, buildings, -4)) end, 
                     0x43,  -- inc ebx
-                    0x83, 0xFB, 0x7,  -- cmp ebx,7
+                    0x83, 0xFB, theValue,  -- cmp ebx,7
                     0x7C, 0x2,  -- jl to mov
                     0x31, 0xDB,  -- xor ebx,ebx
                     0x89, 0x1D,  -- mov [var], ebx

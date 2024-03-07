@@ -19,7 +19,7 @@ options:
       hasHeader: true
       url: ucp2-legacy.ai_housing.build_housing
       contents:
-        min: 0
+        min: 1
         max: 100
         step: 1
         decimals: 0
@@ -33,7 +33,7 @@ options:
       hasHeader: true
       url: ucp2-legacy.ai_housing.campfire_housing
       contents:
-        min: 0
+        min: 1
         max: 25
         step: 1
         decimals: 0
@@ -207,14 +207,19 @@ options:
       enabled: false
       choice: ''
 - category: ['{{ai}}', '{{improvements}}']
-  name: ai_attackwave
-  header: '{{ai_attackwave}}'
+  display: UCP2Slider
   text: '{{ai_attackwave_descr}}'
-  display: UCP2Switch
-  url: ucp2-legacy.ai_attackwave.enabled
+  header: '{{ai_attackwave}}'
+  hasHeader: true
+  url: ucp2-legacy.ai_attackwave
   contents:
-    value: false
-    type: boolean
+    min: 0
+    max: 100
+    step: 1
+    decimals: 0
+    value:
+      enabled: false
+      sliderValue: 7
 - category: ['{{ai}}', '{{fixes}}']
   name: ai_buywood
   header: '{{ai_buywood}}'

@@ -53,6 +53,7 @@ ai_attackwave_descr: |
   In vanilla the AI only sends out a single soldier per wallpiece in an attack and the rest of the army wait until a wallsegment is free again if there are more troops than avaviable walltile. 
   this option will allow the AI to send multiple Units per wallsegment to take them down faster and will also have units attack buildings and towers which were previously ignored.
   Additionally the Ai will also send all its remaining attack troops to the enemy keep once the walls have been breached.
+  Adjust the percentage of troops attacking outside castle buildings before a breach happens below:
 # we are adding a suboption here for army part split off to attack economy!
 ai_buywood: Buy additional wood
 ai_buywood_descr: |
