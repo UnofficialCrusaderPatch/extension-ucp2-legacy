@@ -113,10 +113,10 @@ o_disable_border_scrolling: Disable border scrolling via mouse cursor
 o_disable_border_scrolling_descr: |
   Moving the cursor to the edge of the screen will no longer move the camera.
   NOTE: This option is designed to be used in windowed mode, when you are moving your mouse out of the window to do other things.
-o_engineertent: Continious siege tent placement
+o_engineertent: Continuous siege tent placement
 o_engineertent_descr: |
   This option allows the player to continuously place siegeengines down, without the game automatically deselecting the engine after the tent has been placed.
-o_fast_placing: Continious placement for common buildings
+o_fast_placing: Continuous placement for common buildings
 o_fast_placing_descr: |
   Holding your left mouse button down will continuously place the following buildings:
   Killing pits, woodcutters, good & bad things, mills, water pots, bakeries and hovels

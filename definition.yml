@@ -1,6 +1,6 @@
 # The name of your module
 name: ucp2-legacy
-version: 2.15.0
+version: 2.15.1
 default: true
 game: [SHC==1.41, SHCE==1.41]
 meta:
