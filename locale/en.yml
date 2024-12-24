@@ -50,9 +50,9 @@ ai_attacktarget_richest: Richest enemy
 ai_attacktarget_weakest: Weakest enemy
 ai_attackwave: More active AI attacking behaviour
 ai_attackwave_descr: |
-  In vanilla the AI only sends out a single soldier per wallpiece in an attack and the rest of the army wait until a wallsegment is free again if there are more troops than avaviable walltile. 
+  In vanilla the AI only sends out a single soldier per wallpiece in an attack and the rest of the army wait until a wallsegment is free again if there are more troops than available walltile. 
   this option will allow the AI to send multiple Units per wallsegment to take them down faster and will also have units attack buildings and towers which were previously ignored.
-  Additionally the Ai will also send all its remaining attack troops to the enemy keep once the walls have been breached.
+  Additionally the AI will also send all its remaining attack troops to the enemy keep once the walls have been breached.
   Adjust the percentage of troops attacking outside castle buildings before a breach happens below:
 # we are adding a suboption here for army part split off to attack economy!
 ai_buywood: Buy additional wood
@@ -69,10 +69,10 @@ ai_fix_laddermen_with_enclosed_keep_descr: |
   AIs no longer stop assaulting enemy walls with their Laddermen if their own keep is enclosed.
 ai_nosleep: Disable sleep mode for production facilities
 ai_nosleep_descr: |
-  The AI lords put their production buildings to sleep, if they run out of a resources they depend on for their Industry. E.g. all bakers are put to sleep when Saladin runs out of flour. 
+  The AI lords put their production buildings to sleep, if they run out of a specific resource they depend on for their Industry. E.g. all bakers are put to sleep when Saladin runs out of flour. 
   However, this often disregards goods still being processed or midst their delivery leading to a constant loss of goods.
-  Here you can disable this sleep mode for the AI entirely.
-ai_resources_rebuy: Improve AI restocking of needed goods
+  You can disable this sleep mode for the AI entirely here.
+ai_resources_rebuy: Improve AI's restocking of needed goods
 ai_resources_rebuy_descr: |
   The AI often doesn't restock goods even if it has the gold for it, leaving its production chains running dry. This option reduces the amount of time the AI waits for its stocks to be empty before restocking the necessary goods.
 ai_noflour_maxtime_descr: |
@@ -94,18 +94,18 @@ ai_recruitstate_initialtimervalue_descr: |
 ai_tethers: Set ox tethers to a maximum of 10 per AI lord
 ai_tethers_descr: |
   Usually, the AI builds a new ox tether for every new quarry it constructs, even if it exceeds the usual limit of 10 ox tethers per lord. This can lead to a spam of ox tethers, reaching the housing limit for an AI lord causing no new peasants to spawn. With this setting you can disable the placement of that extra ox tether when a new quarry is built.
-ai_towerengines: Increase the siege engine limit of the AI
+ai_towerengines: Increase the siege towers limit of the AI
 ai_towerengines_descr: |
   Usually the AI only builds up to three mangonels and ballistas on its towers. With this option this limit is increased to 5 per engine.
 fix_apple_orchard_build_size: Shrink apple orchard's build size
 fix_apple_orchard_build_size_descr: |
-  Changes the apple orchard's build preview to the size it occupies after the farm is placed down. This saves some space when building apple orchards and makes it easier for the AI to find space to place them on oasisgrass.
+  Changes the apple orchard's build preview to the size it occupies after the farm is placed down. This saves some space when building apple orchards and makes it easier for the AI to find space to place them on oasis grass.
 o_armory_marketplace_weapon_order_fix: Match armory/marketplace weapon order
 o_armory_marketplace_weapon_order_fix_descr: |
   Reorders weapon icons in the the marketplace to be the same as in the armory. This includes the switching of pages in the market, as well as the display in the main category.
 o_change_siege_engine_spawn_position_catapult: Spawn siege engines in the center of their tent
 o_change_siege_engine_spawn_position_catapult_descr: |
-  In Vanilla the siegeengines are being spawned in the top right of their construction tent. This options places them in the middle of the tent instead
+  In Vanilla the siege engines are being spawned in the top right of their construction tent. This option places them in the middle of the tent instead
   (however, the tent itself is still not centered at the location designated in the AIV editor).
 o_default_multiplayer_speed: Set default multiplayer speed
 o_default_multiplayer_speed_descr: Allows to set the default multiplayer speed, which also is enabled upon loading the game instead of the default speed of 40.
@@ -115,7 +115,7 @@ o_disable_border_scrolling_descr: |
   NOTE: This option is designed to be used in windowed mode, when you are moving your mouse out of the window to do other things.
 o_engineertent: Continuous siege tent placement
 o_engineertent_descr: |
-  This option allows the player to continuously place siegeengines down, without the game automatically deselecting the engine after the tent has been placed.
+  This option allows the player to continuously place siege engines down, without the game automatically deselecting the engine after the tent has been placed.
 o_fast_placing: Continuous placement for common buildings
 o_fast_placing_descr: |
   Holding your left mouse button down will continuously place the following buildings:
@@ -144,10 +144,10 @@ o_fix_map_sending_descr: |
 o_fix_moat_digging_unit_disappearing: Fix despawning digging troops
 o_fix_moat_digging_unit_disappearing_descr: |
   Fixes the bug where moat digging units would disappear while digging. 
-  Note: Units can still despwawn if you order them to move while standing on unwalkable terrain!
-o_fix_rapid_deletion_bug: Fix resource dublication from rapid deletion
+  Note: Units can still despawn if you order them to move while standing on unwalkable terrain!
+o_fix_rapid_deletion_bug: Fix resource duplication from rapid deletion
 o_fix_rapid_deletion_bug_descr: |
-  Deleting buildings with a fast auto clicker no longer deletes the building multiple times. This way you dont get more resources back from deleting than the game has intended.
+  Deleting buildings with a fast auto clicker no longer deletes the building multiple times. This way you don't get more resources back from deleting than the game has intended.
 o_freetrader: Free trading post
 o_freetrader_descr: |
   This option makes the trading post cost no resources to prevent the AI from getting stuck due to not having enough resources to build the marketplace. In multiplayer games, this prevents the need to restart entirely or demolish buildings for wood when a trading post is forgotten.
@@ -160,12 +160,12 @@ o_gamespeed_descr: |
   The new values are only available ingame via the +- keys, the slider in the ingame menu remains unchanged.
 o_healer: Apothecary worker now doubles as a healer
 o_healer_descr: |
-  The healer of the apothecary building now actively seeks out injured soldiers, siegeengines, civilians and animals to heal them. The nearest targets are treated first. With each healing animation about 1/3 of a spearman's health is recovered. The strolling through gardens and investigation of plague clouds is not replaced. 
+  The healer of the apothecary building now actively seeks out injured soldiers, siege engines, civilians and animals to heal them. The nearest targets are treated first. With each healing animation about 1/3 of a spearman's health is recovered. The strolling through gardens and investigation of plague clouds is not replaced. 
   Only the strolling through the castle is skipped until no more wounded targets are in the area.
 o_increase_path_update_tick_rate: Check more often for available paths
 o_increase_path_update_tick_rate_descr: |
-  In vanilla, it took 200 game ticks to check for new pathing being avaviable, often stopping units to move into the castle after destroying a gate or tower immediately.
-  Change the calcualtion of availability to every 50 gameticks, allowing the units to 'realize' new paths being avaviable more quickly.
+  In vanilla, it took 200 game ticks to check for new pathing being available, often stopping units to move into the castle immediately after destroying a gate or tower.
+  Change the calculation of availability to every 50 gameticks, allowing the units to 'realize' new paths being available more quickly.
 o_keys: Move camera with WASD-Keys and enable quicksaves
 o_keys_descr: |
   The WASD-keys can be used to move the camera around as well as CTRL-S and CTRL-L for quicksaving and loading respectively.
@@ -175,7 +175,7 @@ o_moatvisibility_descr: |
   With this option you will always see your unfinished planned moat even when deselecting the moat tool or not having any units selected.
 o_onlyai: Activate Spectator-mode [bug possible]
 o_onlyai_descr: |
-  Removes the human player from the first slot, enabeling you to spectate games between up to 8 AIs without interferance. Savegames load properly in this mode but if a player was present he will not be controllable. Sometimes a bug appears in which random objects spawn all over the map. This is just visually and can be removed by saving the game, ending the mission and reloading the save file.
+  Removes the human player from the first slot, enabling you to spectate games between up to 8 AIs without interference. Savegames load properly in this mode but if a player was present he will not be controllable. Sometimes a bug appears in which random objects spawn all over the map. This is only visual and can be removed by saving the game, ending the mission and reloading the save file.
 o_override_identity_menu: Override the Set-up Identity menu adding new features
 o_override_identity_menu_descr: |
   Adds Ranged and Melee unit selection to Set-up Identity menu for the normal game mode in skirmish games.
@@ -187,7 +187,7 @@ o_remove_right_click_context_menu_descr: |
   Removes the right click context menu where you can rotate the map, lower walls, zoom and flatten.
 o_responsivegates: Quicker automatic detection of gates
 o_responsivegates_descr: |
-  Gates often kept AIs trapped and felt unresponsive in themselves shuttin down traffic for too long. They now automatically close later if enemies get into their detection range and open faster after the danger is gone. 
+  Gates often kept AIs trapped and felt unresponsive in themselves shutting down traffic for too long. They now automatically close later if enemies get into their detection range and open faster after the danger is gone. 
   Reduce the detection range from 200 to 140 and the gameticks to reopen the gates after no enemies are detected from 1200 to 100.
 o_restore_arabian_engineer_speech: Restore arabian engineer voicelines
 o_restore_arabian_engineer_speech_descr: |
@@ -198,12 +198,12 @@ o_restore_arabian_engineer_speech_descr: |
 #o_seed_modification_possibility_only_set: Enable fixed game randomseed
 #o_seed_modification_possibility_only_set_descr: |
 #  'Setting the Game seed will allow
-#  AI-only games to play out the same way if the same map settings are used. For games involving human players, it will ensure the same starting conditions in the map (e.g. AIV selection). To set the game seed, enable this option and create a file called ''live'' containing an integer in the [game install]/gameseeds directory. CAUTION: This feature only works after also restarting the game!'
+#  AI-only games to play out the same way if the same map settings are used. For games involving human players, it will ensure the same starting conditions in the map (e.g. AIV selection). To set the game seed, enable this option and create a file called ''live'' containing an integer in the [game install]/gameseeds directory. CAUTION: This feature only works after restarting the game!'
 #o_seed_modification_possibility_title: Manipulate random number generator
 o_shfy: Strongholdify
 o_shfy_descr: |
   Adapts listed aspects to match Stronghold 1 balance.
-  Attention: Every change also influences the AI lords, in the worst case renders them useless!
+  Attention: Every change also influences the AI lords, which in the worst case renders them useless!
 o_shfy_beer: Popularity bonus from beer
 o_shfy_peasantspawnrate: Spawnrate of peasants at the campfire
 o_shfy_religion: Popularity bonus from cathedral and church
@@ -225,7 +225,7 @@ u_fix_applefarm_blocking_descr: |
   Apple farmers can no longer be blocked while collecting apples from their farm by placing buildings at the top left side of their farm.
 u_fix_lord_animation_stuck_movement: Reset lord animation after destroying buildings
 u_fix_lord_animation_stuck_movement_descr: |
-  Reset the pose of the lord after he stops moving or destroying a building into his upright posture. Usually it would get stuck bend down to the ground.
+  Reset the pose of the lord after he stops moving or destroying a building into his upright posture. Usually he would get stuck bent down to the ground.
 #u_jestermoveto_assassin: Stop the jester from seeking out assassins
 #u_jestermoveto_assassin_descr: |
 # The jester visits your units on the battlefield to cheer them up. Now he wont visit your invisible assassins anymore, showing everyone where they are!
