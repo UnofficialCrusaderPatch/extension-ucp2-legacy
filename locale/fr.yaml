@@ -1,0 +1,246 @@
+Name: Crusader Patcheur Non Officiel
+ai: IA
+balance_changes: Modifications de l'équilibrage
+bugfixes: Corrections de bugs
+fixes: Correctifs
+improvements: Améliorations
+misc: Divers
+qol: Qualité de vie
+ai_housing: Gestion plus intelligente des logements
+ai_housing_descr: Laisser les seigneurs IA gérer leurs logements plus intelligemment en ajustant leurs critères pour arrêter de construire de nouvelles maisons et en empêchant l'IA de supprimer des maisons. Cela permet généralement à l'IA de s'étendre plus rapidement et de produire de nouveaux travailleurs plus vite au début de la partie.
+ai_build_housing: Ajuster les espaces vides pour que les paysans apparaissent
+ai_build_housing_descr: |
+  Ajuste quand les IA arrêteront de construire des maisons en fonction de l'espace encore disponible pour de nouveaux paysans. Dans la version vanilla, cette valeur est de 0, donc l'IA ne construit de nouvelles maisons que si toutes les maisons sont entièrement peuplées.
+  Cette option empêche également les IA de démolir leurs maisons supplémentaires.
+ai_campfire_housing: Ajuster l'espace pour les paysans oisifs autour du feu de camp
+ai_campfire_housing_descr: |
+  Ajuste le nombre maximum de paysans aux feux de camp des IA, avant que les IAs arrêtent de construire de nouvelles maisons.
+  Cette option empêche également les IAs de démolir leurs maisons supplémentaires.
+ai_delete_housing: Cette option empêche exclusivement les IAs de démolir leurs maisons supplémentaires.
+ai_demolish: Démolir des bâtiments pour de l'argent
+ai_demolish_descr: |
+  Si les IA se sentent sous pression, elles démolissent leurs bâtiments économiques ou de fortification afin d'obtenir rapidement de l'argent pour acheter des troupes. Cette fonction semble parfois se déclencher sans raison apparente et la démolition de ces bâtiments est souvent une mauvaise stratégie. Les types suivants de démolition de bâtiments pour obtenir de l'argent peuvent être désactivés.
+ai_demolish_eco: Bâtiments économiques
+ai_demolish_trapped: Bâtiments inaccessibles
+ai_demolish_walls: Bâtiments de fortification
+ai_access: Pas de démolition de bâtiments inaccessibles
+ai_access_descr: |
+  L'IA ne démolit plus et ne reconstruit plus ses bâtiments en continu, lorsqu'ils ne peuvent pas être atteints par un travailleur.
+ai_addattack: Changement de l'augmentation du taux de troupes d'attaque supplémentaires
+ai_addattack_descr: |
+  Dans la version vanilla, chaque seigneur IA augmente son armée de 5 unités supplémentaires pour chaque attaque principale. Vous pouvez ajuster cette quantité ici.
+ai_addattack_alt_descr: |
+  Vous pouvez également laisser les seigneurs IA augmenter leur armée d'un pourcentage basé sur la taille initiale de leur armée, qui elle est unique pour chaque seigneur.
+  Exemple : Facteur d'échelle = 0,5
+  Troupes d'attaque du sultan = 10, 15, 20, 25, ... 
+  Troupes d'attaque de Saladin = 50, 75, 100, 125, ...
+ai_assaultswitch: Désactiver le changement de cibles d'attaque de l'IA pendant un siège
+ai_assaultswitch_descr: |
+  Les IA dont la cible était réglée sur l'or ou le plus faible réévaluaient parfois la cible à attaquer au milieu d'un siège, faisant passer leurs troupes à travers toute la carte. Avec cette correction, l'IA s'en tiendra à la cible choisie précédemment.
+ai_attacklimit: Ajuster la limite de l'IA pour le recrutement des troupes d'attaque
+ai_attacklimit_descr: |
+  Le nombre d'unités de l'armée principale de l'IA est plafonné à la taille de sa première attaque plus cette valeur (200 dans vanilla). Une fois cette limite atteinte, l'IA cesse de recruter des troupes et n'envoie plus d'attaques principales.
+  REMARQUE : Des valeurs très élevées peuvent entraîner l'atteinte de la limite globale d'unités dans les parties plus longues, avec pour conséquence l'impossibilité pour les paysans de réapparaître.
+ai_attacktarget: Remplacer les cibles d'attaque de l'IA
+ai_attacktarget_descr: |
+  Vous pouvez modifier la façon dont tous les seigneurs IA choisissent leurs cibles d'attaque.
+  REMARQUE : il existe un moyen plus granulaire de définir le comportement individuel des cibles d'attaque pour les IA à l'intérieur de l'AIC en utilisant le module aiSwapper.
+ai_attacktarget_nearest: Ennemi le plus proche
+ai_attacktarget_richest: Ennemi le plus riche
+ai_attacktarget_weakest: Ennemi le plus faible
+ai_attackwave: Comportement plus actif de l'IA en attaque
+ai_attackwave_descr: |
+  Dans la version vanilla, l'IA n'envoie qu'un seul soldat par bout de mur lors d'une attaque et le reste de l'armée attend jusqu'à ce qu'un segment de mur soit à nouveau libre s'il y a plus de troupes que de cases de murs disponibles. 
+  Cette option permettra à l'IA d'envoyer plusieurs unités par segment de mur pour les abattre plus rapidement et permettra également aux unités d'attaquer les bâtiments et les tours qui étaient auparavant ignorés.
+  De plus, l'IA enverra toutes ses troupes d'attaque restantes vers le donjon ennemi une fois que les murs auront été abattus.
+  Ajustez en dessous le pourcentage de troupes attaquant à l'extérieur des bâtiments du château avant qu'une brèche ne soit ouverte :
+# Nous ajoutons une sous-option ici pour la partie de l'armée qui se sépare pour attaquer l'économie !
+ai_buywood: Acheter du bois supplémentaire
+ai_buywood_descr: |
+  Dans la version vanilla, lorsqu'elles construisent un bâtiment, les IAs ne stockent du bois que pour le prix exact du bâtiment qu'elles s'apprêtent à construire. Cela ne laisse aucun matériau restant pour la production active d'armes consommant du bois. Dans ce cas-là, 2 bois supplémentaires sont stockés par l'IA afin d'éviter ce problème.
+ai_defense: Renouvellement plus fiable des défenseurs du château
+ai_defense_descr: |
+  Corrige un bug qui empêchait l'IA de remplacer les troupes manquantes sur les murs et les tours tant que des patrouilles défensives étaient encore dans les parages.
+ai_fix_crusader_archers_pitch: Permet aux archers européens d'allumer le brai
+ai_fix_crusader_archers_pitch_descr: |
+  Les archers européens de l'IA allument le brai de la même manière que les archers arabes lorsqu'ils se défendent contre des unités ennemies.
+ai_fix_laddermen_with_enclosed_keep: Permettre aux IA ayant leur donjon fermé de déployer des écheliers
+ai_fix_laddermen_with_enclosed_keep_descr: |
+  Les IAs arrêtent de ne plus d'attaquer les murs ennemis avec leurs écheliers si leur propre donjon est fermé.
+ai_nosleep: Désactiver le mode veille pour les installations de production
+ai_nosleep_descr: |
+  Les seigneurs IA mettent en sommeil leurs bâtiments de production s'ils manquent d'une ressource spécifique dont ils dépendent pour leur industrie. Par exemple, tous les boulangers sont mis en sommeil lorsque Saladin n'a plus de farine. 
+  Cependant, cela ne tient souvent pas compte des produits encore en cours de traitement ou en milieu de livraison, ce qui entraîne une perte constante de produits.
+  Vous pouvez désactiver entièrement ce mode veille pour l'IA ici.
+ai_resources_rebuy: Améliore le réapprovisionnement de l'IA en produits nécessaires
+ai_resources_rebuy_descr: |
+  Il arrive souvent que l'IA ne se réapprovisionne pas en produits même si elle dispose de l'or nécessaire pour cela, laissant ses chaînes de production à sec. Cette option réduit le temps pendant lequel l'IA attend que ses stocks soient vides avant de se réapprovisionner en produits nécessaires.
+ai_noflour_maxtime_descr: |
+  Temps en 1/12ème de mois jusqu'à ce que l'IA réapprovisionne 2 farines.
+ai_noiron_maxtime_descr: |
+  Temps en 1/12ème de mois jusqu'à ce que l'IA réapprovisionne 2 fers.
+ai_nowood_maxtime_descr: |
+  Temps en 1/12ème de mois jusqu'à ce que l'IA réapprovisionne 2 bois.
+ai_rebuild: Amélioration des réparations de l'IA
+ai_rebuild_descr: |
+  Avec ce paramètre, les IAs remplaceront les ruines des tours et les murs légèrement endommagés. Elles construiront également par dessus des terrains de rassemblement pour les bâtiments de recrutement si leur bâtiment principal a disparu.
+ai_recruitinterval: Augmentation de la vitesse de recrutement de base
+ai_recruitinterval_descr: |
+  Règle l'intervalle de recrutement de toutes les IAs à la valeur la plus basse, recrutant aussi vite que le Rat/Richard dans le version vanilla.
+  NOTE : Il existe une façon plus granulaire de régler la vitesse de recrutement individuelle pour les IA AIC en utilisant le module aiSwapper.
+ai_recruitstate_initialtimer: Fixer la durée initiale des IA jusqu'à ce qu'elles recrutent en fonction des paramètres de l'AIC
+ai_recruitstate_initialtimervalue_descr: |
+  Ajuste le nombre de mois pendant lesquels l'IA recrutera exclusivement des troupes de défense, à moins que sa réserve d'unités de défense ne soit pleine. Dans la version vanilla, cette période s'étend sur 6 mois.
+ai_tethers: Fixer les attaches à bœufs à un maximum de 10 par seigneur IA
+ai_tethers_descr: |
+  Habituellement, l'IA construit une nouvelle attache à bœufs pour chaque nouvelle carrière qu'elle construit, même si elle dépasse la limite habituelle de 10 attaches de bœuf par seigneur. Cela peut conduire à un spam de bœufs, atteignant la limite de logement pour un seigneur IA, ce qui fait qu'aucun nouveau paysan n'apparaît. Avec ce paramètre, vous pouvez désactiver le placement d'une attache à bœufs supplémentaire lorsqu'une nouvelle carrière est construite.
+ai_towerengines: Augmente la limite des tours de siège de l'IA
+ai_towerengines_descr: |
+  Habituellement, l'IA ne construit que jusqu'à trois mangonneaux et ballistes sur ses tours. Avec cette option, cette limite est augmentée de 5 par engin.
+fix_apple_orchard_build_size: Réduire la taille du verger de pommiers
+fix_apple_orchard_build_size_descr: |
+  Modifie l'aperçu de la construction du verger de pommiers pour qu'il corresponde à la taille qu'il occupe une fois la ferme posée. Ceci économise de l'espace lors de la construction de vergers de pommiers et facilite la tâche de l'IA pour qu'elle de l'espace afin les placer sur l'herbe d'oasis.
+o_armory_marketplace_weapon_order_fix: Réorganise l'ordre des armes de l'armurerie/le marché
+o_armory_marketplace_weapon_order_fix_descr: |
+  Réorganise les icônes des armes dans le marché pour qu'elles soient identiques à celles de l'armurerie. Cela inclut le changement de pages dans le marché, ainsi que l'affichage dans la catégorie principale.
+o_change_siege_engine_spawn_position_catapult: Faire apparaître les engins de siège au centre de leur tente.
+o_change_siege_engine_spawn_position_catapult_descr: |
+  Dans la version vanilla, les engins de siège apparaissent en haut à droite de leur tente de construction. Cette option les place au milieu de la tente à la place
+  (cependant, la tente elle-même n'est toujours pas centrée à l'endroit désigné dans l'éditeur AIV).
+o_default_multiplayer_speed: Définit la vitesse par défaut du mode multijoueur
+o_default_multiplayer_speed_descr: Permet de définir la vitesse par défaut du mode multijoueur (qui est également activée au moment de charger le jeu) au lieu de la vitesse de 40 par défaut.
+o_disable_border_scrolling: Désactiver le défilement des bordures via le curseur de la souris
+o_disable_border_scrolling_descr: |
+  Déplacer le curseur au bord de l'écran ne déplacera plus la caméra.
+  REMARQUE : cette option est conçue pour être utilisée en mode fenêtré, lorsque vous déplacez votre souris hors de la fenêtre pour faire autre chose.
+o_engineertent: Placement en continu des tentes de siège
+o_engineertent_descr: |
+  Cette option permet au joueur de placer des engins de siège en continu, sans que le jeu ne désélectionne automatiquement l'engin après que la tente ait été placée.
+o_fast_placing: Placement continu pour les bâtiments communs
+o_fast_placing_descr: |
+  Maintenir le bouton gauche de la souris enfoncé placera continuellement les bâtiments suivants :
+  Fosses à pics, cabanes de bûcherons, bons et mauvais augures, moulins, réservoirs d'eau, boulangeries et masures.
+#o_fast_placing_all: Tous les bâtiments
+#o_fast_placing_all_descr: |
+#  Maintenir le bouton gauche de la souris enfoncé permet de placer le bâtiment en continu.
+#o_fast_placing_common: |
+#  Juste ces bâtiments communs : Fosse à pics, piège à brais, cabane de bûcheron, bons et mauvais augures, moulin, réservoir d'eau, boulangerie, masure.
+#o_fast_placing_common_descr: ' '
+o_firecooldown: Ajuste la période pendant laquelle les bâtiments ne peuvent pas prendre feu après extinction.
+o_firecooldown_descr: |
+  La durée pendant laquelle les bâtiments éteints ne peuvent pas reprendre feu. Dans la version vanilla, la durée est de 2000 ticks de jeu, ce qui équivaut à 2 mois et demi.
+o_fix_baker_disappear: Corrige le bug où les boulangers disparaissent
+o_fix_baker_disappear_descr: |
+  Les boulangers ne disparaissent plus lorsqu'ils ne trouvent pas de farine dans leur réserve ciblée.
+o_fix_fletcher_bug: Corrige le bug où la trajectoire des facteurs d'arc est inefficace
+o_fix_fletcher_bug_descr: |
+  Corrige un bug où le comportement des facteurs d'arc consistait à retourner sur leur lieu de travail après avoir livré l'arc/l'arbalète à l'armurerie au lieu d'aller directement à la réserve pour prendre du bois pour le prochain cycle de production.
+o_fix_ladderclimb: Les unités qui montent à l'échelle conservent leur cible issues de la commande de mouvement
+o_fix_ladderclimb_descr: |
+  Les unités se souviendront de leur destination initiale après avoir grimpé une échelle, au lieu de rester bloquées sur les échelles et d'attendre sur la case du mur sur lequel elles ont grimpé.
+o_fix_map_sending: Activation de l'envoi de cartes pour le mode multijoueur
+o_fix_map_sending_descr: |
+  Réduit la longueur du nom de la carte envoyée, afin de permettre à nouveau l'envoi de cartes.
+o_fix_moat_digging_unit_disappearing: Correction du bug où les troupes en train de creuser disparraissent
+o_fix_moat_digging_unit_disappearing_descr: |
+  Corrige le bug où les unités creusant les douves disparaissaient pendant qu'elles creusaient. 
+  Remarque : Les unités peuvent toujours disparaître si vous leur ordonnez de se déplacer alors qu'elles se trouvent sur un terrain où elles ne peuvent marcher !
+o_fix_rapid_deletion_bug: Correction du bug où les ressources se dupliquent suite à une suppression rapide
+o_fix_rapid_deletion_bug_descr: |
+  La suppression de bâtiments à l'aide d'un auto-cliqueur rapide ne supprime plus le bâtiment plusieurs fois. Ceci fait que vous ne récupérez pas plus de ressources que le jeu n'avait prévu.
+o_freetrader: Marché (bâtiment) gratuit
+o_freetrader_descr: |
+  Cette option fait en sorte que le marché ne coûte aucune ressource afin d'éviter que l'IA ne se retrouve bloquée parce qu'elle n'a pas assez de ressources pour le construire. Dans les parties multijoueur, cela évite de devoir redémarrer complètement ou de démolir des bâtiments pour obtenir du bois lorsqu'un comptoir commercial est oublié.
+o_gamespeed: Extension des limites de vitesse du jeu
+o_gamespeed_descr: |
+  Permet de modifier la vitesse de jeu de la manière suivante:
+  - De 10 à 90 par intervalles de 5
+  - De 90 à 200 par intervalles de 10
+  - De 200 à 1000 par intervalles de 100
+  Les nouvelles valeurs ne sont disponibles qu'en jeu via les touches +-, le curseur dans le menu du jeu reste inchangé.
+o_healer: L'apothicaire peut désormais faire office de guérisseur.
+o_healer_descr: |
+  Le soigneur du bâtiment de l'apothicaire recherche désormais activement les soldats, les engins de siège, les civils et les animaux blessés pour les soigner. Les cibles les plus proches sont traitées en premier. Chaque animation de guérison permet de récupérer environ 1/3 de la santé d'un lancier. La promenade dans les jardins et la recherche des nuages de peste ne sont pas remplacées. 
+  Seule la promenade dans le château est sautée jusqu'à ce qu'il n'y ait plus de cibles blessées dans la zone.
+o_increase_path_update_tick_rate: Vérifier plus souvent les chemins disponibles
+o_increase_path_update_tick_rate_descr: |
+  Dans vanilla, il fallait 200 ticks de jeu pour vérifier si un nouveau chemin était disponible, ce qui empêchait souvent les unités d'aller dans le château immédiatement après avoir détruit une porte ou une tour.
+  Modifiez le calcul de la disponibilité à tous les 50 ticks de jeu, ce qui permet aux unités de « réaliser » plus rapidement que de nouveaux chemins sont disponibles.
+o_keys: Déplacer la caméra avec les touches WASD et activer les sauvegardes rapides
+o_keys_descr: |
+  Les touches WASD peuvent être utilisées pour déplacer la caméra, ainsi que CTRL-S et CTRL-L pour les sauvegardes rapides et les chargements.
+  Note : L'écriture des descriptions de cartes et la sélection de l'armurerie avec A deviennent infaisables avec cette option.
+o_moatvisibility: Toujours montrer les douves planifiées
+o_moatvisibility_descr: |
+  Avec cette option, vous verrez toujours votre douve planifiée inachevée, même si vous désélectionnez l'outil pour creuser des douves ou si aucune unité n'est sélectionnée.
+o_onlyai: Activer le mode spectateur [bug possible].
+o_onlyai_descr: |
+  Supprime le joueur humain du premier emplacement, ce qui vous permet d'observer des parties entre IAs uniquement avec jusqu'à 8 d'entre elles sans interférence. Les sauvegardes du jeu se chargent correctement dans ce mode, mais si un joueur était présent, il ne sera pas contrôlable. Il arrive parfois qu'un bug apparaisse et que des objets aléatoires apparaissent un peu partout sur la carte. Il s'agit d'un problème visuel qui peut être résolu en sauvegardant le jeu, puis en terminant la mission et en rechargeant enfin le fichier de sauvegarde.
+o_override_identity_menu: Modifie le menu de configuration d'identité en ajoutant de nouvelles fonctionnalités
+o_override_identity_menu_descr: |
+  Ajoute la sélection des unités de combat à distance et de mêlée dans le menu de configuration de l'identité pour le mode de jeu normal dans les parties d'escarmouche.
+  Note : Pour modifier davantage les troupes de départ, vous pouvez activer différentes troupes de départ dans le module startResources.
+o_playercolor: Échange la couleur de cet emplacement avec celle du premier.
+o_playercolor_descr: Ceci remplace la couleur de l'autre emplacement en rouge afin de donner au joueur la couleur avec laquelle il souhaite jouer, choisir la couleur rouge n'a aucun effet.
+o_remove_right_click_context_menu: Supprime le menu contextuel du clic droit
+o_remove_right_click_context_menu_descr: |
+  Supprime le menu contextuel du clic droit qui permet de faire pivoter la carte, d'abaisser les murs, de zoomer et d'aplatir.
+o_responsivegates: Détection automatique plus rapide des portes
+o_responsivegates_descr: |
+  Les portes retenaient souvent les IA prisonnières et ne réagissaient pas lorsqu'elles bloquaient la circulation pendant trop longtemps. Elles se ferment désormais automatiquement plus tard si des ennemis se trouvent dans leur zone de détection et s'ouvrent plus rapidement une fois le danger écarté. 
+  Réduit la portée de détection de 200 à 140 et les ticks du jeu pour réouvrir les portes après qu'aucun ennemi n'ait été détecté de 1200 à 100.
+o_restore_arabian_engineer_speech: Restaure les voix des ingénieurs arabes
+o_restore_arabian_engineer_speech_descr: |
+  Lorsque vous utilisez le seigneur arabe, vos ingénieurs utilisent maintenant les voix arabes originales.
+#o_seed_modification_possibility: Activer et sauvegarder les graines de jeu aléatoires
+#o_seed_modification_possibility_descr: |
+#  Cette option permet de sauvegarder la graines des parties qui n'ont pas encore de graine ''live'', de manière à ce que vous puissiez les renommer ''live'' afin de recréer le match par la suite.
+#o_seed_modification_possibility_only_set: Active le fait que la graine de jeu aléatoire (génération de nombres) soit fixe
+#o_seed_modification_possibility_only_set_descr: |
+#  'La configuration de la graine de jeu (génération de nombre aléatoire) permettra
+#  aux parties avec uniquement des IAs de se dérouler de la même manière si les mêmes paramètres de carte sont utilisés. Pour les parties impliquant des joueurs humains, cela garantira les mêmes conditions de départ dans la carte (par exemple, la sélection de l'AIV). Pour définir la graine de jeu, activez cette option et créez un fichier appelé ''live'' contenant un nombre entier dans le répertoire [répertoire du jeu]/gameseeds. ATTENTION : Cette fonction ne fonctionne qu'après avoir redémarré le jeu !'
+#o_seed_modification_possibility_title: Manipuler le générateur de nombres aléatoires
+o_shfy: Strongholdifier
+o_shfy_descr: |
+  Adapte les points listés pour correspondre à l'équilibrage de Stronghold 1.
+  Attention : Chaque changement influence également les seigneurs IA, ce qui, dans le pire des cas, les rend inutiles !
+o_shfy_beer: Bonus de popularité de la bière
+o_shfy_peasantspawnrate: Taux de réapparition des paysans au feu de camp
+o_shfy_religion: Bonus de popularité de la cathédrale et de l'église
+o_shfy_resourcequantity: Quantité de ressources livrées
+o_stop_player_keep_rotation: Pivote les donjons des joueurs vers le centre de la carte
+o_stop_player_keep_rotation_descr: |
+  Les donjons des joueurs sont désormais pivotés de la même manière que les donjons des IAs sur une carte, orientant leur feu de camp vers le bord de la carte.
+  Remarque : Cela ne fera pivoter aucun autre bâtiment, leurs entrées et leurs lieux de rassemblement seront toujours orientés vers le coin sud-ouest de la carte.
+o_xtreme: Supprime la barre magique dans Crusader Extreme
+u_arabwall: Les spadassins arabes détruisent les murs plus rapidement
+u_arabwall_descr: |
+  Dans la version vanilla, les épéistes arabes détruisent les murs plus lentement que n'importe quelle autre unité de mêlée. Avec cette option, la vitesse de destruction des murs est doublée pour eux, ce qui les place légèrement au-dessus des lanciers.
+u_arabxbow: Amélioration de l'armure des spadassins arabes contre les carreaux d'arbalète
+u_arabxbow_descr: |
+  Les spadassins arabes meurent désormais après avoir été touchés 6 fois par des carreaux d'arbalète au lieu de 3 seulement.
+u_fireballistafix: Les ballistes incendiaires ciblent désormais automatiquement les moines et les tunneliers.
+u_fix_applefarm_blocking: Corrige le bug où le producteur de pommes est bloqué
+u_fix_applefarm_blocking_descr: |
+  Les producteurs de pommes ne peuvent plus être bloqués lorsqu'ils cueillent des pommes dans leur ferme en plaçant des bâtiments en haut à gauche de leur ferme.
+u_fix_lord_animation_stuck_movement: Réinitialise l'animation du seigneur après la destruction de bâtiments
+u_fix_lord_animation_stuck_movement_descr: |
+  Remettre la posture du seigneur debout après qu'il ait cessé de se déplacer ou détruit un bâtiment. D'habitude, il reste penché vers le sol.
+#u_jestermoveto_assassin: Empêche le bouffon d'aller chercher des assassins
+#u_jestermoveto_assassin_descr: |
+# Le bouffon rend visite à vos unités sur le champ de bataille pour leur remonter le moral. Désormais, il ne rendra plus visite à vos assassins invisibles en montrant à tout le monde où ils se trouvent !
+u_laddermen: Augmentation de l'armure des écheliers contre les unités à distance
+u_laddermen_descr: |
+  - Les écheliers meurent après 12 coups de flèche au lieu de 5
+  - Les écheliers meurent après 5 tirs d'arbalète ou de fronde au lieu de 2
+  - Les écheliers coûtent 20 or au lieu de 4
+u_spearmen: Augmentation de l'armure des lanciers contre les unités à distance
+u_spearmen_descr: |
+  - Les lanciers ne meurent qu'après 5 coups de flèche au lieu de 3
+  - Les lanciers survivent à peine à un carreau d'arbalète au lieu d'être tués d'un seul coup.
+u_spearmen_run: Les lanciers courent par défaut au lieu de marcher.
+u_spearmen_run_descr: |
+  Fait en sorte que les lanciers courent par défaut comme les esclaves et les massiers.
+u_tanner_fix: Corrige le bug où les tanneurs reviennent sans vache
+u_tanner_fix_descr: |
+  Les tanneurs ne reviennent plus sans vache lorsqu'un autre tanneur a pris leur vache ciblée. Ils attendront un peu et choisiront ensuite une autre vache.
