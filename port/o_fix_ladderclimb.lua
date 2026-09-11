@@ -31,7 +31,7 @@ return {
         self.o_fix_ladderclimb_4_edit = AOBScan("0F BF 96 02 07 00 00 0F BF 86 00 07 00 00 66 8B 8E 8A 09 00 00")
     end,
 
-    enable = function(self, config)
+    enable = function(self, config, persistentState)
         
         -- new DefaultHeader("o_fix_ladderclimb")
         local code = {
@@ -58,7 +58,7 @@ return {
          -- need 120k bytes, because we need 3*4 bytes per unit, and the SHC-E max is 10k units
         }
         writeCode(self.o_fix_ladderclimb_edit, code)
-        local savedUnitDestinationForClimbing = allocate(120000)
+        local savedUnitDestinationForClimbing = persistentState:allocate('ladder-destinations', 120000)
         -- skip 12 bytes
         local code = {
             0xE9, function(address, index, labels)

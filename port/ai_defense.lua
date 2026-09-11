@@ -31,7 +31,7 @@ return {
         self.ai_defense_check_edit = AOBScan("8B 96 ? ? ? ? 3B 91 80 01 00 00 50 8B CF 7C 07 E8 ? ? ? ? EB 28 E8 ? ? ? ? EB 21 83")
     end,
 
-    enable = function(self, config)
+    enable = function(self, config, persistentState)
         
         -- Crusader does count defensive units on walls and patrols together
         -- this prevents the AI from reinforcing missing troops on walls, if
@@ -45,7 +45,8 @@ return {
         }
         local groupVar = readInteger(self.ai_defense_group_edit + 0x1B)
         local somevar = readInteger(self.ai_defense_reset_edit + 1)
-        local defNum = allocate(9*4)
+        -- AI decisions consume the last unit census before the next recount.
+        local defNum = persistentState:allocate('wall-defense-counts', 9*4)
         local code = {
             0xE9, function(address, index, labels)
                 local hook = {

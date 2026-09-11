@@ -29,7 +29,7 @@ return {
         self.ai_attackwave_lord_edit = AOBScan("75 49 85 D2 74 45 3D BA 00 00 00 74 3E 8B C2 69 C0 90 04 00 00 0F BF 88 ? ? ? ? 0F BF 80")
     end,
 
-    enable = function(self, config)
+    enable = function(self, config, persistentState)
 
         local theValue = config.sliderValue or 7
         
@@ -37,7 +37,13 @@ return {
         local walls = self.ai_attackwave_edit + 1 + 4 + readInteger(self.ai_attackwave_edit + 1)
         local buildings = self.ai_attackwave_edit + 0x1C7 + 4 + readInteger(self.ai_attackwave_edit + 0x1C7)
         local towers = self.ai_attackwave_edit + 0x20F + 4 + readInteger(self.ai_attackwave_edit + 0x20F)
-        local var_type = allocate(4)
+        -- This selector survives calls and decides which target class is used.
+        -- Restoring RNG alone cannot reproduce an attack if this value is lost.
+        local var_type = persistentState:allocate('attack-target-cycle', 4, function(data)
+            local a, b, c, d = data:byte(1, 4)
+            local value = a + b * 256 + c * 65536 + d * 16777216
+            assert(value < math.max(1, theValue), 'Saved attack target cycle exceeds its configured range')
+        end)
         local back = self.ai_attackwave_edit + 0 + 5
         local code = {
             0xE9, function(address, index, labels)
